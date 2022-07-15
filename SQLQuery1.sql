@@ -1,0 +1,4 @@
+﻿create aaaaa(
+id   int
+
+)
