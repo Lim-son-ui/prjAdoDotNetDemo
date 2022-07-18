@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace 訂房系統
         {
             InitializeComponent();
         }
-
+        
         bool _isoklclick = false;
 
         public bool isokclicked
@@ -24,54 +25,76 @@ namespace 訂房系統
             get { return _isoklclick; }
         }
 
+        CProduct cpd = new CProduct();
         
-        public int id
+        public CProduct _cpd
         {
-            //get { return int.Parse(txtId.Text); }
-            //set { txtId.Text = value.ToString(); }
-            get;
-            set;
-        }
-        public string name
-        {
-            //get { return txtName.Text; }
-            //set { txtName.Text = value; }
-            get;
-            set;
-        }
 
-        public decimal store
-        {
-            //get { return int.Parse(txtQty.Text); }
-            //set { txtQty.Text = value.ToString(); }
-            get;
-            set;
-        }
 
-        public decimal amount
-        {
-            //get { return int.Parse(txtAmt.Text); }
-            //set { txtAmt.Text = value.ToString(); }
-            get;
-            set;
-        }
+            get {
+                cpd.id = Convert.ToInt32(txtId.Text);
+                cpd.name = txtName.Text;
+                cpd.qty = Convert.ToInt32(txtQty.Text);
+                cpd.cost = Convert.ToDecimal(txtCost.Text);
+                cpd.price = Convert.ToDecimal(txtPrice.Text);
 
-        public decimal price
-        {
-            //get { return int.Parse(txtAmt.Text); }
-            //set { txtAmt.Text = value.ToString(); }
-            get;
-            set;
+                return cpd;
+            }
+
+            set {
+                cpd = value;
+                txtId.Text = cpd.id.ToString();
+                txtName.Text = cpd.name;
+                txtQty.Text = cpd.qty.ToString();
+                txtCost.Text = cpd.cost.ToString("0.0");
+                txtPrice.Text = cpd.price.ToString("0.0");
+            }
         }
+        
+
+        bool isDatavalidate()
+        {
+            string message = "";
+
+            if(txtName.Text == "")
+            {
+                message += "\r\n名稱必須填寫";
+            }
+
+            if(txtQty.Text == "")
+            {
+                message += "\r\n庫存必須填寫";
+            }
+
+            if (txtCost.Text == "")
+            {
+                message += "\r\n成本必須填寫";
+            }
+
+            if (txtPrice.Text == "")
+            {
+                message += "\r\n價格必須填寫";
+            }
+
+            if(message != "")
+            {
+                MessageBox.Show(message);
+            }
+
+            return message == "";
+        }
+  
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (!isDatavalidate())
+            {
+               
+                //Debug.Fail("錯誤"); 
+                return;
+            }
+
             _isoklclick = true;
-            id = Convert.ToInt32(txtId.Text);
-            name = txtName.Text;
-            store = Convert.ToDecimal(txtQty.Text);
-            amount = Convert.ToDecimal(txtAmt.Text);
-            price = Convert.ToDecimal(txtPrice.Text);
             Close();
         }
 

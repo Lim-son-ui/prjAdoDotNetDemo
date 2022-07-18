@@ -31,7 +31,7 @@ namespace 訂房系統
         {
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtAmt = new System.Windows.Forms.TextBox();
+            this.txtCost = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtQty = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -68,13 +68,13 @@ namespace 訂房系統
             // 
             // txtAmt
             // 
-            this.txtAmt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAmt.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.txtAmt.Location = new System.Drawing.Point(78, 304);
-            this.txtAmt.Name = "txtAmt";
-            this.txtAmt.Size = new System.Drawing.Size(140, 33);
-            this.txtAmt.TabIndex = 19;
-            this.txtAmt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCost.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.txtCost.Location = new System.Drawing.Point(78, 304);
+            this.txtCost.Name = "txtAmt";
+            this.txtCost.Size = new System.Drawing.Size(140, 33);
+            this.txtCost.TabIndex = 19;
+            this.txtCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
             // 
@@ -189,7 +189,7 @@ namespace 訂房系統
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtAmt);
+            this.Controls.Add(this.txtCost);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtQty);
             this.Controls.Add(this.label3);
@@ -206,19 +206,19 @@ namespace 訂房系統
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtPrice;
+        internal System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtAmt;
+        internal System.Windows.Forms.TextBox txtCost;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtQty;
+        internal System.Windows.Forms.TextBox txtQty;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtName;
+        internal System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtId;
+        internal System.Windows.Forms.TextBox txtId;
     }
 }

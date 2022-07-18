@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace 訂房系統
+namespace prjHotelDotCompApp
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace 訂房系統
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_main ());
+            Application.Run(new Form1());
         }
     }
 }

@@ -18,12 +18,14 @@ namespace 訂房系統
             InitializeComponent();
         }
 
+      
         private void button5_Click(object sender, EventArgs e)
         {
             Frm_customer_edit frm = new Frm_customer_edit();
+            //frm.MdiParent = this;
             frm.Show();
 
-            //new Frm_customeredit().
+        
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -107,6 +109,7 @@ namespace 訂房系統
             cmd.Connection = con;
             cmd.CommandText = sql;
             SqlDataReader reader = cmd.ExecuteReader();
+
             string name = "沒有資料";
 
             if (reader.Read())
@@ -123,7 +126,13 @@ namespace 訂房系統
 
         private void button6_Click(object sender, EventArgs e)
         {
-            new Frm_productlist().Show();
+            Frm_productlist frm =  new Frm_productlist();
+            frm.ShowDialog();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //this.IsMdiContainer = true;
         }
     }
 }
