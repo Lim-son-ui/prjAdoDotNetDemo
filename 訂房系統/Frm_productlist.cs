@@ -36,7 +36,7 @@ namespace 訂房系統
         {
             Frmproductedit fpd =  new Frmproductedit();
             fpd.ShowDialog();
-
+             
             if (fpd.isokclicked)
             {
                 DataTable table = (DataTable)dataGridView1.DataSource;
