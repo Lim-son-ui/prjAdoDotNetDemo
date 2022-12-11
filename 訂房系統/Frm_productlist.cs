@@ -19,7 +19,7 @@ namespace 訂房系統
             
             InitializeComponent();
             refresh();
-            //setGridStyle();
+            setGridStyle();
         }
 
         private void Frm_productlist_Load(object sender, EventArgs e)
@@ -43,6 +43,7 @@ namespace 訂房系統
             
             DataSet ds = new DataSet();
             adapter.Fill(ds);
+            //dataGridView1.DataSource = ds.Tables[0];
             con.Close();
 
 
@@ -163,9 +164,13 @@ namespace 訂房系統
 
             if (fpd.isokclicked)
             {
+                // #region
+                //DataTable table = dataGridView1.DataSource as DataTable;      //建一個表 在表中實作出一個row
+                //DataRow row = table.NewRow();
+                //#endregion
 
-                DataTable table = (DataTable)dataGridView1.DataSource;      //建一個表 在表中實作出一個row
-                DataRow row = table.NewRow();
+                DataView dv = dataGridView1.DataSource as DataView;
+                DataRowView row = dv.AddNew();
                 CProduct p = fpd._cpd;
             
                 row["fid"] = p.id;
@@ -175,7 +180,10 @@ namespace 訂房系統
                 row["fprice"] = p.price;
 
 
-                table.Rows.Add(row);
+
+                //row.EndEdit();
+                //table.Rows.Add(row);
+                //row.Add(row);
                 setGridStyle();
             }
 
@@ -192,15 +200,23 @@ namespace 訂房系統
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)         //紀錄所點擊的位置
         {
             _position = e.RowIndex;
+
+
         }
 
         private void btnupd_Click(object sender, EventArgs e)      //更新
         {
 
             if (_position < 0) return;
-            
-            DataTable table = dataGridView1.DataSource as DataTable;
-            DataRow row = table.Rows[_position];
+            #region
+            //DataTable table = dataGridView1.DataSource as DataTable;
+            //DataRow row = table.Rows[_position];
+            //row.Delete();
+            #endregion
+
+            DataView dv = dataGridView1.DataSource as DataView;
+            DataRow row = dv.Table.Rows[_position];
+
             CProduct p = new CProduct()
             {
                 id = (int)row["fid"],
@@ -228,25 +244,31 @@ namespace 訂房系統
         private void btndelete_Click(object sender, EventArgs e)      //刪除
         {
             if (_position < 0) return;
-
-            DataTable table = dataGridView1.DataSource as DataTable;
-            DataView table1 = dataGridView1.DataSource as DataView;
-
+            #region
+            //DataTable table = dataGridView1.DataSource as DataTable;
             //DataView row1 = table1.Table.Rows[_position];
-            DataRow row = table.Rows[_position];
+            #endregion
+            DataView dv = dataGridView1.DataSource as DataView;
+            MessageBox.Show("" + dv);
+            DataRow row = dv.Table.Rows[_position];
+            MessageBox.Show(""+row);
             row.Delete();
-            //row.AcceptChanges();
+            row.AcceptChanges();
+            
+
+
         }
 
         private void Frm_productlist_FormClosed(object sender, FormClosedEventArgs e)       //關掉時還要連線
         {
+            #region
             //DataTable table = dataGridView1.DataSource as DataTable;
-            //if(table.Rows.Count > 0)  adapter.Update(table);        //要關閉form把更改存入
-            ////adapter.Update(table);
-            ///
+            //if (table.Rows.Count > 0) adapter.Update(table);        //要關閉form把更改存入
+            //adapter.Update(table);
+            #endregion
 
             DataView dv = dataGridView1.DataSource as DataView;         //view 丟入adapter
-            if (dv.Count > 0) adapter.Update(dv.Table);
+            if (dv.Table.Rows.Count > 0) adapter.Update(dv.Table);
         }
         #region
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -274,6 +296,7 @@ namespace 訂房系統
             //第一種方式
 
             DataView dv = dataGridView1.DataSource as DataView;  //由小到大排序
+            MessageBox.Show("" + dv);
             dv.Sort = comboBox1.Text + "desc";
             setGridStyle();
         }

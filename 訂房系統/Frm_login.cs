@@ -26,18 +26,13 @@ namespace 訂房系統
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString =  @"Data Source=.;Initial Catalog=dbDemo;Integrated Security=True";
+            con.ConnectionString = @"Data Source=.;Initial Catalog=dbDemo;Integrated Security=True";
             con.Open();
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "select * from tcustomer where femail = '" + textBox1.Text + "' and fpassword = " + textBox2.Text;
+            cmd.CommandText = "select * from tcustomer where femail = '" + textBox1.Text + "' and fpassword = '" + textBox2.Text + "' ";
 
             SqlDataReader reader = cmd.ExecuteReader();
 
@@ -51,6 +46,15 @@ namespace 訂房系統
             }
             MessageBox.Show("帳號與密碼不符");
             con.Close();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            isclosed = false;
+            Application.Exit();
+
         }
 
         private void Frm_login_Load(object sender, EventArgs e)

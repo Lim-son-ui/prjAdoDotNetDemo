@@ -119,5 +119,33 @@ namespace prjAdoDotNetDemo
             MessageBox.Show("查詢成功" + name);
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int[] nums = { 1, 2, 3, 4, 5, 6, 7 };
+
+            IEnumerable<int> q = from n in nums
+                                 where iseven(n)
+                                 select n;
+
+            foreach(int n in q)
+            {
+                this.listBox1.Items.Add(n);
+            }
+
+        }
+
+        bool iseven(int n)
+        {
+            if(n%2 == 0)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
     }
 }

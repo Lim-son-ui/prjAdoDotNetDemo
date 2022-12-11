@@ -42,9 +42,10 @@ namespace 訂房系統
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(3, 116);
+            this.button1.Location = new System.Drawing.Point(4, 145);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 29);
             this.button1.TabIndex = 0;
             this.button1.Text = "insert";
             this.button1.UseVisualStyleBackColor = true;
@@ -52,9 +53,10 @@ namespace 訂房系統
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(3, 169);
+            this.button2.Location = new System.Drawing.Point(4, 211);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(100, 29);
             this.button2.TabIndex = 0;
             this.button2.Text = "delete";
             this.button2.UseVisualStyleBackColor = true;
@@ -62,9 +64,10 @@ namespace 訂房系統
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(3, 213);
+            this.button3.Location = new System.Drawing.Point(4, 266);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(100, 29);
             this.button3.TabIndex = 0;
             this.button3.Text = "update";
             this.button3.UseVisualStyleBackColor = true;
@@ -72,9 +75,10 @@ namespace 訂房系統
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(3, 256);
+            this.button4.Location = new System.Drawing.Point(4, 320);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(100, 29);
             this.button4.TabIndex = 0;
             this.button4.Text = "查看資料";
             this.button4.UseVisualStyleBackColor = true;
@@ -82,9 +86,10 @@ namespace 訂房系統
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(3, 58);
+            this.button5.Location = new System.Drawing.Point(4, 72);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(100, 29);
             this.button5.TabIndex = 0;
             this.button5.Text = "會員訂房";
             this.button5.UseVisualStyleBackColor = true;
@@ -92,9 +97,10 @@ namespace 訂房系統
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(3, 13);
+            this.button6.Location = new System.Drawing.Point(4, 16);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(100, 29);
             this.button6.TabIndex = 1;
             this.button6.Text = "產品";
             this.button6.UseVisualStyleBackColor = true;
@@ -110,27 +116,29 @@ namespace 訂房系統
             this.panel1.Controls.Add(this.button2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(145, 582);
+            this.panel1.Size = new System.Drawing.Size(193, 728);
             this.panel1.TabIndex = 2;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(145, 0);
+            this.panel2.Location = new System.Drawing.Point(193, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(829, 118);
+            this.panel2.Size = new System.Drawing.Size(1106, 148);
             this.panel2.TabIndex = 4;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 582);
+            this.ClientSize = new System.Drawing.Size(1299, 728);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

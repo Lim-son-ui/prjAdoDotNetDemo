@@ -16,7 +16,8 @@ namespace 訂房系統
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_main ());
+            //Application.Run(new Frm_productlist ());
+            Application.Run(new Frm_main());
         }
     }
 }
